@@ -7,7 +7,7 @@ This is not intended for production Continuous Delivery (but it may work), it's 
 
 ## Getting started
 
-For now it's just a simple script file which you can run it locally.
+For now it's just a simple script file intended to be run locally.
 
 ### Prerequisites
 
