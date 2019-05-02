@@ -6,11 +6,13 @@ This is not intended for production Continuous Delivery (but it may work), it's 
 
 ## Getting started
 
-For now it's just a simple script file which you can run it locally for now. Clone the repo, add proper access +x to hail.sh
+For now it's just a simple script file which you can run it locally.
 
 ### Prerequisites
 
-This script file depends on: shyaml for parsing config file and jq to prettify the curl upload response. If you don't like to prettify we can add it as optional with a pretty flag, feel free to collaborate (see collaboration section for more details).
+This script file depends on:
+- [shyaml](https://github.com/0k/shyaml) for parsing config file
+- [jq](https://github.com/stedolan/jq) to prettify the curl upload response.
 
 ### Installing
 
