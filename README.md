@@ -1,6 +1,7 @@
 # hail
 
-Hail is command for publishing android builds to HockeyApp. Because for hockey first you need some snow, right?
+Hail is a command for publishing android builds to HockeyApp.
+Because for playing hockey first you need some snow, right?
 
 This is not intended for production Continuous Delivery (but it may work), it's just a home made script. If you are a devOp and know way better scripting than I do (of course you will), feel free to suggest / contribute.
 
