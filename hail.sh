@@ -1,5 +1,5 @@
 #!/bin/bash
-CONFIG_FILE=config.yaml
+CONFIG_FILE=~/.config/hail/config.yaml
 
 # 
 # util functions 
