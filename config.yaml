@@ -1,8 +1,11 @@
 defaults:
     # build command options
     build:
+        # version name for hockey app
         app_version_name: 1.0.0
+        # root dir for android project
         root_dir: /path/to/project
+        # gradlew execution command
         assemble: "clean assembleDebug"
     # release command options
     release: 
@@ -13,16 +16,18 @@ defaults:
         available_for_download: 2
         # 0 - Textile, 1 - Markdown
         notes_type: 1
+        # release notes plain text file
         release_notes_path: /path/to/release_notes.txt
         # found in https://rink.hockeyapp.net/manage/auth_tokens
         user_app_token: 
-        # should be specified by flavor
-        app_id:
-        apk_path:
-flavor_a:
+        # app id from hockey app
+        app_id: hockeyAppId
+        # apk binary build path
+        apk_path: /path/to/app.apk
+release_build_type:
     # overrides defaults
     build:
-        assemble: assembleFlavorADebug
+        assemble: assembleRelease
     release:
-        app_id: specificFlavorAppId
-        apk_path: specificFlavorApkPath
+        app_id: releaseHockeyAppId
+        apk_path: /path/to/app-release.apk

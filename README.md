@@ -40,14 +40,14 @@ $ cp config.yml ~/.config/hail/
 `$ ln -s /path/to/hail/hail.sh /usr/local/bin/hail`
 
 ### Running
-`$ hail -vbr -f specific_flavor -c /path/to/config.yaml`
+`$ hail -v -b -r -f release_build_type -c /path/to/config.yaml`
 
 Where:
 - v: verbose
-- b: build
-- r: release
-- f: flavor name
-- c: specific yaml.
+- b: execute build
+- r: execute release
+- f: build type name (optional)
+- c: yaml config file (optional)
 
 ## Contributing
 
