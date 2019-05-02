@@ -30,7 +30,7 @@ This script file depends on:
 
 
 ### Running
-`$ ./hail.sh -vbr -f flavor_a -c myConfig.yaml`
+`$ ./hail.sh -vbr -f specific_flavor -c /path/to/config.yaml`
 
 Where:
 - v: verbose
