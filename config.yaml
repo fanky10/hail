@@ -1,0 +1,28 @@
+defaults:
+    # build command options
+    build:
+        app_version_name: 1.0.0
+        root_dir: /path/to/project
+        assemble: "assembleDebug"
+    # release command options
+    release: 
+        # 0 - Do not notify
+        should_notify: 0
+        # status:
+        # 2 - mr worldwide
+        available_for_download: 2
+        # 0 - Textile, 1 - Markdown
+        notes_type: 1
+        release_notes_path: release_notes.txt
+        # found in https://rink.hockeyapp.net/manage/auth_tokens
+        user_app_token: 
+        # should be specified by flavor
+        app_id:
+        apk_path:
+flavor_a:
+    # overrides defaults
+    build:
+        assemble: assembleFlavorADebug
+    release:
+        app_id: specificFlavorAppId
+        apk_path: specificFlavorApkPath
