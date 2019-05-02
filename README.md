@@ -19,16 +19,17 @@ This script file depends on:
 - Clone the repo
 
 - Add dependencies: 
-
-`$ brew install shyaml`
-
-`$ brew install jq`
+```bash
+$ brew install shyaml
+$ brew install jq
+```
 
 - Configure config.yml with proper params and move to user defined configuration
 
-`$ mkdir ~/.config/hail/`
-
-`$ cp config.yml ~/.config/hail/`
+```bash
+$ mkdir ~/.config/hail/
+$ cp config.yml ~/.config/hail/
+```
 
 - Add execution access: 
 
