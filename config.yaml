@@ -3,7 +3,7 @@ defaults:
     build:
         app_version_name: 1.0.0
         root_dir: /path/to/project
-        assemble: "assembleDebug"
+        assemble: "clean assembleDebug"
     # release command options
     release: 
         # 0 - Do not notify
