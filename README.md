@@ -18,16 +18,21 @@ This script file depends on:
 
 - Clone the repo
 
-- Add execution access: 
-
-`$ chmod +x hail.sh`
-
 - Add dependencies: 
 
 `$ brew install shyaml`
 
 `$ brew install jq`
 
+- Configure config.yml with proper params and move to user defined configuration
+
+`$ mkdir ~/.config/hail/`
+
+`$ cp config.yml ~/.config/hail/`
+
+- Add execution access: 
+
+`$ chmod +x hail.sh`
 
 ### Running
 `$ ./hail.sh -vbr -f specific_flavor -c /path/to/config.yaml`
@@ -37,7 +42,7 @@ Where:
 - b: build
 - r: release
 - f: flavor name
-- c: specific yaml. Default config.yaml
+- c: specific yaml.
 
 ## Contributing
 
