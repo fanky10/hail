@@ -13,7 +13,7 @@ defaults:
         available_for_download: 2
         # 0 - Textile, 1 - Markdown
         notes_type: 1
-        release_notes_path: release_notes.txt
+        release_notes_path: /path/to/release_notes.txt
         # found in https://rink.hockeyapp.net/manage/auth_tokens
         user_app_token: 
         # should be specified by flavor
