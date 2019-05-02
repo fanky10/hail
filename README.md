@@ -34,8 +34,12 @@ This script file depends on:
 
 `$ chmod +x hail.sh`
 
+- Add alias to user binaries
+
+`$ ln -s /path/to/hail/hail.sh /usr/local/bin/hail`
+
 ### Running
-`$ ./hail.sh -vbr -f specific_flavor -c /path/to/config.yaml`
+`$ hail -vbr -f specific_flavor -c /path/to/config.yaml`
 
 Where:
 - v: verbose
