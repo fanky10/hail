@@ -40,6 +40,47 @@ $ cp config.yml ~/.config/hail/
 
 `$ ln -s /path/to/hail/hail.sh /usr/local/bin/hail`
 
+### Configuration
+
+Configuration is made through modifying config.yaml as follows:
+
+```yaml
+defaults:
+    # build command options
+    build:
+        # version name for hockey app
+        app_version_name: 1.0.0
+        # root dir for android project
+        root_dir: /path/to/project
+        # gradlew execution command
+        assemble: "clean assembleDebug"
+    # release command options
+    release: 
+        # 0 - Do not notify
+        should_notify: 0
+        # status:
+        # 2 - mr worldwide
+        available_for_download: 2
+        # 0 - Textile, 1 - Markdown
+        notes_type: 1
+        # release notes plain text file
+        release_notes_path: /path/to/release_notes.txt
+        # found in https://rink.hockeyapp.net/manage/auth_tokens
+        user_app_token: 
+        # app id from hockey app
+        app_id: hockeyAppId
+        # apk binary build path
+        apk_path: /path/to/app.apk
+# specific build type can be added here
+# which overrides defaults values
+release_build_type:
+    build:
+        assemble: assembleRelease
+    release:
+        app_id: releaseHockeyAppId
+        apk_path: /path/to/app-release.apk     
+```
+
 ### Running
 `$ hail -v -b -r -f release_build_type -c /path/to/config.yaml`
 
