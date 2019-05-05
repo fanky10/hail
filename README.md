@@ -1,12 +1,13 @@
 # hail
 
-Hail is command for publishing android builds to HockeyApp. Because for hockey first you need some snow, right?
+Hail is a command for publishing android builds to HockeyApp.
+Because for playing hockey first you need some snow, right?
 
 This is not intended for production Continuous Delivery (but it may work), it's just a home made script. If you are a devOp and know way better scripting than I do (of course you will), feel free to suggest / contribute.
 
 ## Getting started
 
-For now it's just a simple script file which you can run it locally.
+For now it's just a simple script file intended to be run locally.
 
 ### Prerequisites
 
@@ -38,6 +39,47 @@ $ cp config.yml ~/.config/hail/
 - Add alias to user binaries
 
 `$ ln -s /path/to/hail/hail.sh /usr/local/bin/hail`
+
+### Configuration
+
+Configuration is made through modifying config.yaml as follows:
+
+```yaml
+defaults:
+    # build command options
+    build:
+        # version name for hockey app
+        app_version_name: 1.0.0
+        # root dir for android project
+        root_dir: /path/to/project
+        # gradlew execution command
+        assemble: "clean assembleDebug"
+    # release command options
+    release: 
+        # 0 - Do not notify
+        should_notify: 0
+        # status:
+        # 2 - mr worldwide
+        available_for_download: 2
+        # 0 - Textile, 1 - Markdown
+        notes_type: 1
+        # release notes plain text file
+        release_notes_path: /path/to/release_notes.txt
+        # found in https://rink.hockeyapp.net/manage/auth_tokens
+        user_app_token: 
+        # app id from hockey app
+        app_id: hockeyAppId
+        # apk binary build path
+        apk_path: /path/to/app.apk
+# specific build type can be added here
+# which overrides defaults values
+release_build_type:
+    build:
+        assemble: assembleRelease
+    release:
+        app_id: releaseHockeyAppId
+        apk_path: /path/to/app-release.apk     
+```
 
 ### Running
 `$ hail -v -b -r -f release_build_type -c /path/to/config.yaml`
