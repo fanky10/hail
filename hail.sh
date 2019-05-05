@@ -11,11 +11,6 @@ build () {
 }
 
 release () {
-	if [ -z "$FLAVOR" ]
-	then
-		printf "%s\n" "No flavor parameter found"
-		return 1
-	fi
 	# send form post multipart
 	# optional --progress-bar
 	url="https://rink.hockeyapp.net/api/2/apps/$app_id/app_versions/upload"
