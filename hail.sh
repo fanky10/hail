@@ -6,7 +6,7 @@ CONFIG_FILE=~/.config/hail/config.yaml
 #
 build () {
 	print_v "Executing: $assemble on version: $app_version_name"
-	sed -ie "s/.*versionName.*/versionName '$app_version_name'/" presentation/build.gradle 
+	sed -ie "s/.*versionName.*/versionName '$app_version_name'/" $gradle_file
 	./gradlew $assemble
 }
 
