@@ -48,10 +48,12 @@ Configuration is made through modifying config.yaml as follows:
 defaults:
     # build command options
     build:
-        # version name for hockey app
-        app_version_name: 1.0.0
         # root dir for android project
         root_dir: /path/to/project
+        # gradle relative to root dir
+        gradle_file: app/build.gradle
+        # version name for hockey app
+        app_version_name: 1.0.0
         # gradlew execution command
         assemble: "clean assembleDebug"
     # release command options
