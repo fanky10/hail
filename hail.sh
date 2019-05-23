@@ -1,5 +1,6 @@
 #!/bin/bash
 CONFIG_FILE=~/.config/hail/config.yaml
+RELEASE_OUTPUT="/tmp/$app_id_$app_version_name.txt"
 
 # 
 # util functions 
@@ -27,7 +28,8 @@ release () {
 	)
 
 	print_v "Releasing: $app_version_name"
-	curl "${params[@]}" "${headers[@]}" "$url" | tee /dev/null | jq
+	curl "${params[@]}" "${headers[@]}" "$url" | tee /dev/null | jq > $RELEASE_OUTPUT
+	cat $RELEASE_OUTPUT
 }
 
 # util functions
