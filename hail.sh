@@ -1,5 +1,6 @@
 #!/bin/bash
 CONFIG_FILE=~/.config/hail/config.yaml
+UPLOAD_OUTPUT={"error":500}
 
 # 
 # util functions 
@@ -27,7 +28,15 @@ release () {
 	)
 
 	print_v "Releasing: $app_version_name"
-	curl "${params[@]}" "${headers[@]}" "$url" | tee /dev/null | jq
+	UPLOAD_OUTPUT=$(curl "${params[@]}" "${headers[@]}" "$url" | tee /dev/null)
+}
+
+output () {
+	app_version=$(jq '.id' <<< "$UPLOAD_OUTPUT")
+	# -r raw to avoid quotes
+	public_url=$(jq -r '.public_url' <<< "$UPLOAD_OUTPUT")
+	# not part of verbose but actual output
+	echo "$public_url/app_versions/$app_version"
 }
 
 # util functions
@@ -89,4 +98,5 @@ fi
 if [ "$RELEASE" = "true" ]
 then
 	release 
+	output
 fi
