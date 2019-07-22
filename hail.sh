@@ -12,6 +12,11 @@ build () {
 	./gradlew $assemble
 }
 
+install () {
+	print_v "Installing apk: $apk_path"
+	adb install $apk_path
+}
+
 release () {
 	# send form post multipart
 	# optional --progress-bar
@@ -41,7 +46,7 @@ output () {
 
 # util functions
 print_usage () {
-  printf "Usage: -v -r -b -f flavor or -vrb -f flavor -c file.yml"
+  printf "Usage: -v -r -b -i -f flavor or -vrbi -f flavor -c file.yml"
 }
 
 print_v () {
@@ -68,11 +73,12 @@ read_liner () {
 #
 # main
 #
-while getopts 'bc:f:rv' flag; do
+while getopts 'birc:f:v' flag; do
   case "${flag}" in
     b) BUILD='true' ;;
 	c) CONFIG_FILE="${OPTARG}" ;;
 	f) FLAVOR="${OPTARG}" ;;
+    i) INSTALL='true' ;;
 	r) RELEASE='true' ;;
     v) VERBOSE='true' ;;
     *) print_usage
@@ -93,6 +99,11 @@ cd $root_dir
 if [ "$BUILD" = "true" ]
 then
 	build
+fi
+
+if [ "$INSTALL" = "true" ]
+then
+	install
 fi
 
 if [ "$RELEASE" = "true" ]
