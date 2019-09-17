@@ -14,7 +14,7 @@ build () {
 
 install () {
 	print_v "Installing apk: $apk_path"
-	adb install $apk_path
+	adb install -r $apk_path
 }
 
 release () {
@@ -70,6 +70,12 @@ read_liner () {
 	done
 }
 
+kill_all () {
+	./gradlew --stop
+	pgrep '^[java]' | xargs kill -9
+}
+
+
 #
 # main
 #
@@ -99,6 +105,7 @@ cd $root_dir
 if [ "$BUILD" = "true" ]
 then
 	build
+	kill_all
 fi
 
 if [ "$INSTALL" = "true" ]
